@@ -276,7 +276,7 @@ uni_utf16toucs4(uni_ulong *ucs4, const uni_ushort *utf16, uni_ubyte *shorts_read
     return(C_OK);
   }
 
-  if(utf16[0] < 0xDC00)
+  if(utf16[0] < 0xDC00) {
     if( (utf16[1] >= 0xDC00) && (utf16[1] < 0xE000) )
     {
       *ucs4 = ( ( (utf16[0] - 0xD800) << 10 )
@@ -285,7 +285,8 @@ uni_utf16toucs4(uni_ulong *ucs4, const uni_ushort *utf16, uni_ubyte *shorts_read
       return(C_OK);
     }
     else return(C_ERROR);
-
+  }
+  
   if(utf16[0] < 0xFFFE)
   {
     *ucs4 = utf16[0];

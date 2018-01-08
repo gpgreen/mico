@@ -2,6 +2,7 @@
 #include "test.h"
 #ifdef HAVE_ANSI_CPLUSPLUS_HEADERS
 #include <iostream>
+#include <climits>
 #else // HAVE_ANSI_CPLUSPLUS_HEADERS
 #include <iostream.h>
 #endif // HAVE_ANSI_CPLUSPLUS_HEADERS

@@ -890,11 +890,12 @@ mico_fnmatch (const char *s, const char *p)
 		    if (scc == (lc = cc))
 			ok++;
 	    }
-	    if (cc == 0)
+	    if (cc == 0) {
 		if (ok)
 		    p--;
 		else
 		    return FALSE;
+            }
 	    continue;
 	    
 	case '*':

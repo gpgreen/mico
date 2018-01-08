@@ -218,7 +218,7 @@ extern "C" char *strerror (int);
 extern "C" int gethostname (char *, size_t);
 #endif
 
-#ifndef HAVE_FINITE_PROTO
+#if !HAVE_FINITE && !HAVE_FINITE_PROTO
 extern "C" int finite (double);
 #endif
 

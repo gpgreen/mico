@@ -1,6 +1,7 @@
 # .gitignore
 MakeVars
 MakeVars.install
+autom4te.cache
 config.cache
 config.log
 config.status

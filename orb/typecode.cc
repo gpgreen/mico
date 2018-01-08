@@ -647,7 +647,7 @@ CORBA::TypeCode::equal (TypeCode_ptr tc,
      * [12-12] says we should not take into account the "name" for
      * type equivalence checking ...
      */
-    switch (tckind) {
+    switch (static_cast<int>(tckind)) {
     case tk_wstring:
     case tk_string:
         if( ignore_string_bounds )
@@ -784,7 +784,7 @@ CORBA::TypeCode::equaltype (TypeCode_ptr tc, SetTC *_cache)
     /*
      * first check for simple types ...
      */
-    switch (me->tckind) {
+    switch (static_cast<int>(me->tckind)) {
     case tk_void:
     case tk_null:
     case tk_short:
@@ -1461,7 +1461,7 @@ CORBA::TypeCode::decode (DataDecoder &dc, MapPosTC *_omap, ULong level)
     buffer_pos = dc.buffer()->rpos() - sizeof(CORBA::ULong);
     (*omap)[buffer_pos] = make_pair (level, _nil());
 
-    switch (tckind) {
+    switch (static_cast<int>(tckind)) {
     case tk_null:
     case tk_void:
     case tk_short:
@@ -1712,7 +1712,7 @@ CORBA::TypeCode::encode (DataEncoder &ec, MapTCPos *_omap) const
      */
     (*omap)[this] = ec.buffer()->wpos() - sizeof(CORBA::ULong);
 
-    switch (tckind) {
+    switch (static_cast<int>(tckind)) {
     case tk_null:
     case tk_void:
     case tk_short:

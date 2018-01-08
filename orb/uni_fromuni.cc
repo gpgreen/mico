@@ -755,12 +755,14 @@ uni_slong uni_fromUTF8(char *dest, const char *utf8, uni_uword *chars, uni_uword
             ci++;
 
           if(string_type==(uni_ulong)C_ASCII7 ||
-	     string_type==C_ISO646)
-            if((utf8[si] & 0x80) != 0)
+	     string_type==C_ISO646) {
+            if((utf8[si] & 0x80) != 0) {
               if((utf8[si] & 0x40) != 0)
                 di--;
               else
                 dest[di-1] = C_ASCII7_UNKNOWN;
+            }
+          }
       }
 
     dest[di] = '\0';

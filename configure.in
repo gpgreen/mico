@@ -1322,7 +1322,7 @@ AC_CHECK_HEADERS(byteorder.h)
 
 # Ansi C++
 have_ansi_cplusplus_headers=yes
-AC_CHECK_HEADERS(iostream map string sstream,,have_ansi_cplusplus_headers=no)
+AC_CHECK_HEADERS(iostream map string sstream climits,,have_ansi_cplusplus_headers=no)
 AC_MSG_CHECKING(for Ansi C++ headers)
 if test "x$have_ansi_cplusplus_headers" = "xyes" ; then
 	AC_DEFINE(HAVE_ANSI_CPLUSPLUS_HEADERS)

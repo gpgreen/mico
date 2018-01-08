@@ -40,6 +40,11 @@
 
 #endif // FAST_PCH
 
+#ifdef HAVE_CLIMITS
+
+#include <climits> // for UINT_MAX
+
+#endif // HAVE_CLIMITS
 
 using namespace std;
 
