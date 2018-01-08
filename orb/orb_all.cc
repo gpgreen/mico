@@ -44,6 +44,11 @@
 #include "dynany.cc"
 #include "ssliop.cc"
 
+#ifdef USE_MESSAGING
+#include "messaging.cc"
+#include "messaging_impl.cc"
+#endif // USE_MESSAGING
+
 #ifdef USE_WIRELESS
 #include "watm.cc"
 #endif // USE_WIRELESS

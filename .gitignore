@@ -1,0 +1,11 @@
+# .gitignore
+MakeVars
+MakeVars.install
+config.cache
+config.log
+config.status
+.depend
+*.a
+*.so
+*.o
+*~
